@@ -1,7 +1,14 @@
 import javax.swing.JOptionPane;
 public class LivroDeNotas{
+
+  Hashtable t;
   //variável de instância
-  String nomeDisciplina = null;
+  private String nomeDisciplina = null;
+
+  //método setter
+  public void setNomeDisciplina(String nomeDisciplina){
+    this.nomeDisciplina = nomeDisciplina;
+  }
   //método de instância
   public void exibirMensagem(){
     //System.out.println("Bem vindo ao livro de notas");

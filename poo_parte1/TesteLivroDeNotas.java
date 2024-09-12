@@ -5,7 +5,7 @@ public class TesteLivroDeNotas{
     //java 10+: operador de inferência de tipo
     var disciplina1 = JOptionPane.showInputDialog("Digite o nome da disciplina");
     var meuLivro = new LivroDeNotas();
-    meuLivro.nomeDisciplina = disciplina1;
+    meuLivro.setNomeDisciplina(disciplina1);
     //acionar o comportamento sobre ele
     meuLivro.exibirMensagem();
 
@@ -13,7 +13,7 @@ public class TesteLivroDeNotas{
     //e fazer com que ele exiba a mensagem
     var disciplina2 = JOptionPane.showInputDialog("Digite o nome da disciplina 2");
     var meuLivro2 = new LivroDeNotas();
-    meuLivro2.nomeDisciplina = disciplina2;
+    meuLivro2.setNomeDisciplina(disciplina2);
     meuLivro2.exibirMensagem();
 
     //new LivroDeNotas();
