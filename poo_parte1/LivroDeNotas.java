@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 public class LivroDeNotas{
 
-  Hashtable t;
+  // Hashtable t;
   //variável de instância
   private String nomeDisciplina = null;
 
