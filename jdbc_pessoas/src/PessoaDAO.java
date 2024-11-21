@@ -1,7 +1,8 @@
 //data access object
-
-import java.sql.Connection;
-
+//mapeamento objeto-relacional
+import java.util.List;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 public class PessoaDAO {
   public void cadastrar(Pessoa p) throws Exception{
     //1. Especificar o comando SQL (INSERT)
@@ -29,5 +30,24 @@ public class PessoaDAO {
     ps.execute();
     ps.close();
     //by Isabel Santos
+  }
+
+  public List <Pessoa> listar() throws Exception{
+    var pessoas = new ArrayList<Pessoa>();
+    var sql = "SELECT * FROM tb_pessoa";
+    //7+: try-with-resources
+    try(var conexao = ConnectionFactory.conectar()){
+      var ps = conexao.prepareStatement(sql);
+      ResultSet rs = ps.executeQuery();
+      while(rs.next()){
+        var codigo = rs.getInt("cod_pessoa");
+        var nome = rs.getString("nome");
+        var fone = rs.getString("fone");
+        var email = rs.getString("email");
+        var p = new Pessoa(codigo, nome, fone, email);
+        pessoas.add(p);
+      }
+      return pessoas;
+    }
   }
 }
